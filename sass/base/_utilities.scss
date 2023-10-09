@@ -1,0 +1,24 @@
+//BACKGROUND COLORS
+
+.bg-g-blue {
+    background: linear-gradient(137deg, $color-blue-dark 0%, $color-blue-light 100%);
+}
+
+.bg-g-green {
+    background: linear-gradient(137deg, $color-green-dark 0%, $color-green-light 100%);
+}
+
+.bg-g-red {
+    background: linear-gradient(137deg, $color-red-dark 0%, $color-red-light 100%);
+}
+
+//CUSTOM MARGINS
+
+.mb-1 {
+    margin-bottom: 15px;
+}
+
+.mb-2 {
+    margin-bottom: 20px;
+}
+

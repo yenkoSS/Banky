@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Bankist</title>
+</head>
+<body>
+    <div class="app-container">
+            <!--SIDEBAR START-->
+        <div class="sidebar">
+            <div class="sidebar-logo-box">
+                <img src="icons/logo.png" alt="" class="logo">
+                <h2 class="text-white">Banky</h2>
+            </div>
+            <div class="sidebar-nav-center">
+                <a href="#" class="sidebar-item mb-1">
+                    <img src="icons/icon-account.png" alt="" class="item-icon">
+                    <span>Account</span>
+                </a>
+                <a href="#" class="sidebar-item mb-2">
+                    <img src="icons/icon-envelope.png" alt="" class="item-icon">
+                    Inbox
+                </a>
+                <a href="#" class="sidebar-item mb-2">
+                    <img src="icons/icon-statistics.png" alt="" class="item-icon">
+                    Statistics
+                </a>
+                <a href="#" class="sidebar-item mb-2">
+                    <img src="icons/icon-calendar.png" alt="" class="item-icon">
+                    Calendar
+                </a>
+                <a href="#" class="sidebar-item">
+                    <img src="icons/icon-crypto.png" alt="" class="item-icon">
+                    Cryptocurrency
+                </a>
+            </div>
+            <div class="sidebar-bottom">
+                <a href="#" class="sidebar-item">
+                    <img src="icons/icon-logout.png" alt="" class="item-icon">
+                    Log out
+                </a>
+            </div>
+        </div>
+        <!--SIDEBAR END-->
+
+        <!--DASHBOARD START-->
+        <div class="dashboard-container">
+            <div class="dashboard-item">
+                <div class="card bg-g-blue">                 
+                    <h5 class="text-white mb-1">Total balance</h5>                  
+                    <h3 class="text-white">$4,500</h3>
+                </div>
+            </div>
+            <div class="dashboard-item">
+                <div class="card bg-g-green">
+                    <h5 class="text-white mb-1">Incomes</h5>
+                    <h3 class="text-white">$4,500</h3>
+                </div>
+            </div>
+            <div class="dashboard-item">
+                <div class="card bg-g-red">                   
+                    <h5 class="text-white mb-1">Outcomes</h5>                 
+                    <h3 class="text-white">$4,500</h3>
+                </div>
+            </div>
+            <div class="dashboard-item">
+                <canvas id="mychart" class="monthly-chart"></canvas>
+            </div>
+            <div class="dashboard-item">
+                <div class="user-details-box">
+                    <img src="img/avatar.png" alt="" class="user-avatar mb-1">
+                    <h4 class="mb-1">Welcome, John Doe</h4>
+                    <div class="user-type-box">
+                        <h3>PREMIUM</h3>
+                        <img class="user-type-logo" src="icons/logo.png" alt="">
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="dashboard-item">
+                <canvas id="doughnutChart" class="doughnutChart"></canvas>
+            </div>
+            <div class="dashboard-item">
+                <div class="user-transactions-box">
+                    <h4 class="text-white-gray">Latest transactions</h4>
+                    <div class="user-transaction">
+                        <div class="date-box">
+                            <h3>JUN</h3>
+                            <h4>2023</h4>
+                        </div>
+                        <h5>Iphone XS 256gb</h5>
+                        <h5 class="text-red">$466.99</h5>
+                    </div>
+                    <div class="user-transaction">
+                        <div class="date-box">
+                            <h3>JUN</h3>
+                            <h4>2023</h4>
+                        </div>
+                        <h5>Deposit Libra Bank ATM</h5>
+                        <h5 class="text-green">$200</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--DASHBOARD END-->
+    </div>
+</body>
+<script src="node_modules/chart.js/dist/chart.umd.js"></script>
+<script>
+    const xValues = [50,60,70,80];
+    const yValues = [7,8,8,9,9];
+    const mychart = document.querySelector('#mychart');
+    const doughnutChart = document.querySelector('#doughnutChart')
+
+    const barColors = [
+    "rgba(255, 0, 0, 0.6);",
+    "rgba(67, 245, 39, 0.8)",
+    "rgba(0, 151, 255, 0.8)",
+    "rgba(255, 173, 0, 0.8)",
+    "rgba(0,0,255,0.2)",
+    ];
+
+    new Chart("mychart", {
+    type: "line",
+    data: {
+        labels: xValues,
+        datasets: [{
+        backgroundColor:"rgba(0,0,255,1.0)",
+        borderColor: "rgba(0,0,255,0.1)",
+        data: yValues
+        }]
+    },
+    });
+
+    new Chart("doughnutChart", {
+    type: "doughnut",
+    data: {
+        labels: xValues,
+        datasets: [{
+        backgroundColor: barColors,
+        data: yValues
+        }]
+    },
+    options: {
+        title: {
+        display: true,
+        text: "World Wide Wine Production"
+        }
+    }
+    });
+</script>
+</html>

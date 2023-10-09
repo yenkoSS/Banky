@@ -1,0 +1,100 @@
+@import 'abstracts/variables';
+@import 'base/base';
+@import 'base/utilities';
+@import 'base/typography';
+@import 'layout/sidebar';
+
+
+.app-container {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+
+.dashboard-container {
+    margin-right:auto;
+    margin-left:auto;
+
+    padding:10px;
+
+    display:grid;
+    grid-template-columns: repeat(3, max(350px)); 
+    grid-template-rows: 140px repeat(2, 1fr);
+    row-gap: 20px;
+    column-gap: 20px;
+ 
+    >div:nth-child(4) {
+        grid-column: 1/ span 2;
+    }
+
+    >div:nth-child(7) {
+        grid-column: 2 / span 2;
+    }
+
+}
+
+.card {
+
+    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding:30px;
+}
+
+
+
+.monthly-chart {
+    width:auto;
+    height:400px;
+}
+
+.doughnutChart {
+    width:auto;
+    height:300px;
+}
+
+.user-details-box {
+    padding:30px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    height: 100%;
+
+    .user-avatar {
+        width:160px;
+        height:160px;
+        border:5px solid $color-blue-dark;
+        border-radius:50%;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+
+    .user-type-box {
+
+        display:flex;
+        align-items: center;
+
+        .user-type-logo {
+            width:20px;
+            height:20px;
+            margin-left:15px;
+        }
+    }
+}
+
+.user-transactions-box {
+
+    padding:15px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    height: auto;
+
+
+    .user-transaction {
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding:20px;
+    }
+}
