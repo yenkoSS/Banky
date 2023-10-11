@@ -53,19 +53,19 @@
             <div class="dashboard-item">
                 <div class="card bg-g-blue">                 
                     <h5 class="text-white mb-1">Total balance</h5>                  
-                    <h3 class="text-white">$4,500</h3>
+                    <h3 id="totalBalance" class="text-white"></h3>
                 </div>
             </div>
             <div class="dashboard-item">
                 <div class="card bg-g-green">
                     <h5 class="text-white mb-1">Incomes</h5>
-                    <h3 class="text-white">$4,500</h3>
+                    <h3 id="incomes" class="text-white"></h3>
                 </div>
             </div>
             <div class="dashboard-item">
                 <div class="card bg-g-red">                   
                     <h5 class="text-white mb-1">Outcomes</h5>                 
-                    <h3 class="text-white">$4,500</h3>
+                    <h3 id="outcomes" class="text-white"></h3>
                 </div>
             </div>
             <div class="dashboard-item">
@@ -74,7 +74,7 @@
             <div class="dashboard-item">
                 <div class="user-details-box">
                     <img src="img/avatar.png" alt="" class="user-avatar mb-1">
-                    <h4 class="mb-1">Welcome, John Doe</h4>
+                    <h4 id="profileUsername" class="mb-1"></h4>
                     <div class="user-type-box">
                         <h3>PREMIUM</h3>
                         <img class="user-type-logo" src="icons/logo.png" alt="">
@@ -87,71 +87,13 @@
             </div>
             <div class="dashboard-item">
                 <div class="user-transactions-box">
-                    <h4 class="text-white-gray">Latest transactions</h4>
-                    <div class="user-transaction">
-                        <div class="date-box">
-                            <h3>JUN</h3>
-                            <h4>2023</h4>
-                        </div>
-                        <h5>Iphone XS 256gb</h5>
-                        <h5 class="text-red">$466.99</h5>
-                    </div>
-                    <div class="user-transaction">
-                        <div class="date-box">
-                            <h3>JUN</h3>
-                            <h4>2023</h4>
-                        </div>
-                        <h5>Deposit Libra Bank ATM</h5>
-                        <h5 class="text-green">$200</h5>
-                    </div>
+                    <h4 class="text-white-gray mb-1">Latest transactions</h4>
                 </div>
             </div>
         </div>
         <!--DASHBOARD END-->
     </div>
 </body>
-<script src="node_modules/chart.js/dist/chart.umd.js"></script>
-<script>
-    const xValues = [50,60,70,80];
-    const yValues = [7,8,8,9,9];
-    const mychart = document.querySelector('#mychart');
-    const doughnutChart = document.querySelector('#doughnutChart')
-
-    const barColors = [
-    "rgba(255, 0, 0, 0.6);",
-    "rgba(67, 245, 39, 0.8)",
-    "rgba(0, 151, 255, 0.8)",
-    "rgba(255, 173, 0, 0.8)",
-    "rgba(0,0,255,0.2)",
-    ];
-
-    new Chart("mychart", {
-    type: "line",
-    data: {
-        labels: xValues,
-        datasets: [{
-        backgroundColor:"rgba(0,0,255,1.0)",
-        borderColor: "rgba(0,0,255,0.1)",
-        data: yValues
-        }]
-    },
-    });
-
-    new Chart("doughnutChart", {
-    type: "doughnut",
-    data: {
-        labels: xValues,
-        datasets: [{
-        backgroundColor: barColors,
-        data: yValues
-        }]
-    },
-    options: {
-        title: {
-        display: true,
-        text: "World Wide Wine Production"
-        }
-    }
-    });
-</script>
+<script type="module" src="js/charts.js"></script>
+<script src="js/app.js"></script>
 </html>

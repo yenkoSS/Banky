@@ -84,15 +84,17 @@ h5 {
 .app-container {
   display: flex;
   flex-direction: row;
-  align-items: center; }
+  align-items: center;
+  height: 95vh; }
 
 .dashboard-container {
   margin-right: auto;
   margin-left: auto;
   padding: 10px;
+  height: 95vh;
   display: grid;
   grid-template-columns: repeat(3, 350px);
-  grid-template-rows: 140px repeat(2, 1fr);
+  grid-template-rows: 140px 350px 350px;
   row-gap: 20px;
   column-gap: 20px; }
   .dashboard-container > div:nth-child(4) {
@@ -106,18 +108,19 @@ h5 {
   padding: 30px; }
 
 .monthly-chart {
-  width: auto;
-  height: 400px; }
+  height: 100%;
+  width: 100%; }
 
 .doughnutChart {
   width: auto;
-  height: 300px; }
+  height: 100%; }
 
 .user-details-box {
   padding: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   height: 100%; }
   .user-details-box .user-avatar {
@@ -137,10 +140,13 @@ h5 {
 .user-transactions-box {
   padding: 15px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  height: auto; }
+  height: 100%;
+  overflow-y: scroll; }
   .user-transactions-box .user-transaction {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 20px; }
+    padding: 10px;
+    background-color: #fafafa;
+    margin-bottom: 10px; }
