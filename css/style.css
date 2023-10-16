@@ -109,9 +109,11 @@ h5 {
 
 .monthly-chart {
   height: 100%;
-  width: 100%; }
+  width: 100%;
+  padding: 10px; }
 
 .doughnutChart {
+  padding: 20px;
   width: auto;
   height: 100%; }
 
@@ -141,7 +143,9 @@ h5 {
   padding: 15px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   height: 100%;
-  overflow-y: scroll; }
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: orange; }
   .user-transactions-box .user-transaction {
     display: flex;
     flex-direction: row;
